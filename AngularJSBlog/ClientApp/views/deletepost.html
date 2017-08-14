@@ -1,0 +1,121 @@
+﻿<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a ui-sref="dashboard">Başlangıç</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <a ui-sref="posts">Yazılar</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" dropdown-menu-hover data-delay="1000" data-close-others="true">
+                Actions
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-user"></i> New User
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-present"></i> New Event
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-basket"></i> New order
+                    </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-flag"></i> Pending Orders
+                        <span class="badge badge-danger">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-users"></i> Pending Users
+                        <span class="badge badge-warning">12</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<h3 class="page-title">
+    Yazılar
+    <small>Blog yazılarını düzenleyin</small>
+</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+<div class="row" ng-controller="DeletePostController">
+    <div class="col-md-12">
+        <!-- BEGIN: ACCORDION DEMO -->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-green-sharp">
+                    <i class="icon-settings font-green-sharp"></i>
+                    <span class="caption-subject bold uppercase">Yazı Düzenle</span>
+                    <span class="caption-helper hide"></span>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default" href="#">
+                        <i class="icon-cloud-upload"></i>
+                    </a>
+                    <a class="btn btn-circle btn-icon-only btn-default" href="#">
+                        <i class="icon-wrench"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="col-md-12">
+                            Yazı Düzenle
+                        </div>
+                    </div>
+                </div>
+                <form name="DeletePostForm" ng-submit="Delete2()" role="form">
+                    <div class="form-horizontal">
+                        <input type="hidden" name="postId" ng-model="Id" value="{{Id}}" />
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Başlık*:</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="postName" ng-model="Name" value="{{Name}}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Body:</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" name="postBody" ng-model="Body">{{Body}}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Yayın Tarihi*:</label>
+                            <div class="col-md-10">
+                                <input type="datetime" class="form-control" name="postPublishDate" ng-model="PublishDate" value="{{PublishDate}}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Yayında Mı?*:</label>
+                            <div class="col-md-10">
+                                <input type="checkbox" class="form-control" name="postIsPublished" ng-model="IsPublished" value="{{IsPublished}}" />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sill</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->
+<!-- BEGIN MAIN JS-->
+<!-- BEGIN MAIN JS -->
