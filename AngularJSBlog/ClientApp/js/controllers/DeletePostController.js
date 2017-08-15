@@ -13,7 +13,7 @@ angular.module('MetronicApp').controller('DeletePostController', ['$rootScope', 
     });
     
     $scope.Delete2 = function () {
-        $http({ method: "delete", url: "/api/posts", data: { Id:$scope.Id, Name: $scope.Name, Body: $scope.Body, PublishDate: $scope.PublishDate, IsPublished: $scope.IsPublished } }).then(function (response) {
+        $http({ method: "delete", url: "/api/posts?id=" + $stateParams.id, data: { Id:$scope.Id, Name: $scope.Name, Body: $scope.Body, PublishDate: $scope.PublishDate, IsPublished: $scope.IsPublished } }).then(function (response) {
             $location.path("/posts");
         }, function (response) {
             alert("Yazı silinirken bir hata oluştu");
